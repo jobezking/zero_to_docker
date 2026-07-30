@@ -66,3 +66,44 @@ $ docker stop test
 test
 $ docker rm test
 test
+
+~/clone/psweb$ docker build -t test:latest .
+[+] Building 11.7s (10/10) FINISHED                                                                                                                                                                                           docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                                                                                    0.0s
+ => => transferring dockerfile: 382B                                                                                                                                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/alpine:latest                                                                                                                                                                        0.5s
+ => [internal] load .dockerignore                                                                                                                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                                                                                                         0.0s
+ => [1/5] FROM docker.io/library/alpine:latest@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b                                                                                                                  0.2s
+ => => resolve docker.io/library/alpine:latest@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b                                                                                                                  0.0s
+ => => sha256:55afa1ecc21d2bb5e5045f32dafee56272ffd89860bac26f6c32123439af26a4 3.85MB / 3.85MB                                                                                                                                          0.1s
+ => => extracting sha256:55afa1ecc21d2bb5e5045f32dafee56272ffd89860bac26f6c32123439af26a4                                                                                                                                               0.1s
+ => [internal] load build context                                                                                                                                                                                                       0.0s
+ => => transferring context: 52.21kB                                                                                                                                                                                                    0.0s
+ => [2/5] RUN apk add --update nodejs npm curl                                                                                                                                                                                          1.6s
+ => [3/5] COPY . /src                                                                                                                                                                                                                   0.1s 
+ => [4/5] WORKDIR /src                                                                                                                                                                                                                  0.0s 
+ => [5/5] RUN  npm install                                                                                                                                                                                                              3.2s 
+ => exporting to image                                                                                                                                                                                                                  5.8s 
+ => => exporting layers                                                                                                                                                                                                                 4.4s 
+ => => exporting manifest sha256:76f5ac228a97663b817a5ab33a483fcbb78e0291bb079260e410216b5572bcb3                                                                                                                                       0.0s 
+ => => exporting config sha256:5bb385d03df005a16a783de66e26adc8dd22330b7b7933edcf2ce216503d85dc                                                                                                                                         0.0s 
+ => => exporting attestation manifest sha256:e3f8b238d49ba9907b887cda92bbe8a8789aa3b3c59323ff1b1278455489a602                                                                                                                           0.0s 
+ => => exporting manifest list sha256:0686bf996b0263deea034a27862af5095e80dbdce120c71175528f27d6467777                                                                                                                                  0.0s
+ => => naming to docker.io/library/test:latest                                                                                                                                                                                          0.0s
+ => => unpacking to docker.io/library/test:latest
+
+$ docker images
+IMAGE          ID             DISK USAGE   CONTENT SIZE   EXTRA
+nginx:latest   5a88c9c45479        241MB           66MB        
+test:latest    0686bf996b02        178MB         44.5MB
+
+$ docker run -d --name web1 --publish 8080:8080 test:latest  #open browser and go to localhost:8080
+37199f1a3bc1b8ce27950015572356c07e006cecf962e91a6b1938d37405ac3c
+
+$ docker rm web1 -f
+web1
+
+$ docker rmi test:latest
+Untagged: test:latest
+Deleted: sha256:0686bf996b0263deea034a27862af5095e80dbdce120c71175528f27d6467777
