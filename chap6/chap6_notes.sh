@@ -5,3 +5,5 @@ local repository: /var/lib/docker where Docker stores images, containers, and ot
 registry: a service that stores Docker images. Docker Hub is the default registry. You can also run your own private registry.
 docker images
 docker pull redis
+
+fully qualified image name: registry/namespace/image:tag i.e. docker.io/nigelpoulton/ddd-book:ch8.1
