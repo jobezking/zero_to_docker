@@ -6,4 +6,6 @@ registry: a service that stores Docker images. Docker Hub is the default registr
 docker images
 docker pull redis
 
-fully qualified image name: registry/namespace/image:tag i.e. docker.io/nigelpoulton/ddd-book:ch8.1
+fully qualified image name: registry/namespace/image:tag i.e. docker.io/nigelpoulton/ddd-book:ch8.1d
+docker pull <repository>:<tag> # pulls an image from official repository
+docker pull ghcr.io/regclient/regsync:latest #pull image from different registry; requires DNS name before repository name
