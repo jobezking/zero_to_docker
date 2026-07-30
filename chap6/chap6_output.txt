@@ -1,0 +1,15 @@
+$ docker pull redis
+Using default tag: latest
+latest: Pulling from library/redis
+9ca7640e530c: Pull complete 
+4f4fb700ef54: Pull complete 
+107558435356: Pull complete 
+14e8c228923e: Pull complete 
+af07325cca30: Pull complete 
+7b27a3a8574c: Pull complete 
+ccc74b70df86: Download complete 
+3a48cec40da9: Download complete 
+Digest: sha256:c88d347edef6249a6d2293f926f1eeb48bd40c57cbcd02c07f52e7f1fd2cb46b
+Status: Downloaded newer image for redis:latest
+docker.io/library/redis:latest
+
