@@ -55,3 +55,14 @@ $ docker run --name test -d -p 8080:80 nginx:latest
 $ docker ps
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                     NAMES
 81c98241cda5   nginx:latest   "/docker-entrypoint.…"   34 seconds ago   Up 34 seconds   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   test
+
+$ docker exec -it test bash
+root@81c98241cda5:/# ls
+bin  boot  dev  docker-entrypoint.d  docker-entrypoint.sh  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@81c98241cda5:/# exit
+exit
+
+$ docker stop test
+test
+$ docker rm test
+test
