@@ -1,0 +1,57 @@
+$ docker version
+Client: Docker Engine - Community
+ Version:           29.6.2
+ API version:       1.55
+ Go version:        go1.26.5
+ Git commit:        dfc4efb
+ Built:             Thu Jul 16 16:12:23 2026
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          29.6.2
+  API version:      1.55 (minimum version 1.40)
+  Go version:       go1.26.5
+  Git commit:       3d80467
+  Built:            Thu Jul 16 16:12:23 2026
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          v2.2.6
+  GitCommit:        11ce9d5f3c68c941867e82890e93e815c1304f1b
+ runc:
+  Version:          1.3.6
+  GitCommit:        v1.3.6-0-g491b69ba
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+$ docker images
+IMAGE   ID             DISK USAGE   CONTENT SIZE   EXTRA
+
+$ docker pull nginx:latest
+latest: Pulling from library/nginx
+d26f27cc8c41: Pull complete 
+2bedaf25031a: Pull complete 
+cacfcdd01f30: Pull complete 
+82454cdbf456: Pull complete 
+062e450697fa: Pull complete 
+3c7ab7949321: Pull complete 
+b6698f04e005: Pull complete 
+6c496f5b5050: Download complete 
+ea1d76ccc2c6: Download complete 
+Digest: sha256:5a88c9c45479443d7be2eadc894b4ed0a9801bae03d97a5760ae13b5c2005942
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+
+$ docker images
+IMAGE          ID             DISK USAGE   CONTENT SIZE   EXTRA
+nginx:latest   5a88c9c45479        241MB           66MB 
+
+$ docker run --name test -d -p 8080:80 nginx:latest
+81c98241cda5e85eabbd086821dab857bba39a40e608003888dc69ac16e0bd70
+
+$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                     NAMES
+81c98241cda5   nginx:latest   "/docker-entrypoint.…"   34 seconds ago   Up 34 seconds   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   test
