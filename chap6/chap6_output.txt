@@ -93,3 +93,44 @@ docker buildx imagetools inspect nginx:latest
 Name:      docker.io/library/nginx:latest
 MediaType: application/vnd.oci.image.index.v1+json
 Digest:    sha256:5a88c9c45479443d7be2eadc894b4ed0a9801bae03d97a5760ae13b5c2005942
+
+docker manifest inspect golang | grep 'architecture\|os'
+            "architecture": "amd64",
+            "os": "linux"
+            "architecture": "unknown",
+            "os": "unknown"
+            "architecture": "arm",
+            "os": "linux",
+            "architecture": "unknown",
+            "os": "unknown"
+            "architecture": "arm64",
+            "os": "linux",
+            "architecture": "unknown",
+            "os": "unknown"
+            "architecture": "386",
+            "os": "linux"
+            "architecture": "unknown",
+            "os": "unknown"
+            "architecture": "ppc64le",
+            "os": "linux"
+            "architecture": "unknown",
+            "os": "unknown"
+            "architecture": "riscv64",
+            "os": "linux"
+            "architecture": "unknown",
+            "os": "unknown"
+            "architecture": "s390x",
+            "os": "linux"
+            "architecture": "unknown",
+            "os": "unknown"
+            "architecture": "amd64",
+            "os": "windows",
+            "os.version": "10.0.26100.33158"
+            "architecture": "amd64",
+            "os": "windows",
+            "os.version": "10.0.20348.5386"
+
+docker images -q
+a9875b5ccb02
+5a88c9c45479
+631ec7090c36

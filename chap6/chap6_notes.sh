@@ -14,3 +14,7 @@ docker pull node:latest
 docker inspect node:latest # shows metadata about the image
 docker images --digests node # shows the digest of the image
 docker buildx imagetools inspect nginx:latest # 
+docker manifest inspect golang
+docker rmi nginx:latest # remove the image named nginx:latest
+docker images -q # show only the image IDs of all images
+docker rmi $(docker images -q) -f # remove all images
