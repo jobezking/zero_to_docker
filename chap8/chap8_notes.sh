@@ -5,3 +5,7 @@
 4. Push image to registry (optional)
 5. Run container from image
 
+Example (docker init requires Docker Desktop)
+git clone https://github.com/nigelpoulton/ddd-book.git
+cd ddd-book/node-app
+docker init
