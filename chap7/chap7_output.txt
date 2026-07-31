@@ -1,0 +1,54 @@
+docker run -d --name apache-server -p 8080:80 httpd:latest
+Unable to find image 'httpd:latest' locally
+latest: Pulling from library/httpd
+010f7d7e175f: Pull complete 
+4f4fb700ef54: Pull complete 
+39d55e966aeb: Pull complete 
+ebd81352b960: Pull complete 
+69b5b831a361: Pull complete 
+507729664175: Download complete 
+c72742279dc1: Download complete 
+Digest: sha256:305fd8326a27a137fedb8900f26375699ab233cc37793f35cf5d7c65671fb252
+Status: Downloaded newer image for httpd:latest
+eac9a5c04100e76311311fb8af3fc7e6ffa87d3cd80db1ad9fcb2c55fb686cb4
+
+$ docker images
+                                                                                                                                                                                                                                                           i Info →   U  In Use
+IMAGE                                         ID             DISK USAGE   CONTENT SIZE   EXTRA
+httpd:latest                                  305fd8326a27        177MB         47.6MB    U   
+nginx:latest                                  5a88c9c45479        241MB           66MB        
+node:latest                                   a9875b5ccb02       1.79GB          460MB        
+nvcr.io/nvidia/cuda:12.6.2-base-ubuntu24.04   631ec7090c36        353MB         91.6MB
+
+docker ps
+CONTAINER ID   IMAGE          COMMAND              CREATED         STATUS         PORTS                                     NAMES
+eac9a5c04100   httpd:latest   "httpd-foreground"   2 minutes ago   Up 2 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   apache-server
+docker ps -a
+CONTAINER ID   IMAGE          COMMAND              CREATED         STATUS         PORTS                                     NAMES
+eac9a5c04100   httpd:latest   "httpd-foreground"   2 minutes ago   Up 2 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   apache-server
+
+docker exec -it apache-server sh
+# ls -l
+total 40
+drwxr-xr-x 2 root root 4096 Jul 14 01:22 bin
+drwxr-xr-x 2 root root 4096 Jul 14 01:22 build
+drwxr-xr-x 2 root root 4096 Jul 14 01:22 cgi-bin
+drwxr-xr-x 4 root root 4096 Jul 14 01:22 conf
+drwxr-xr-x 3 root root 4096 Jul 14 01:22 error
+drwxr-xr-x 2 root root 4096 Jul 14 01:22 htdocs
+drwxr-xr-x 3 root root 4096 Jul 14 01:22 icons
+drwxr-xr-x 2 root root 4096 Jul 14 01:22 include
+drwxr-xr-x 1 root root 4096 Jul 31 05:32 logs
+drwxr-xr-x 2 root root 4096 Jul 14 01:22 modules
+# 
+docker exec apache-server ls
+bin
+build
+cgi-bin
+conf
+error
+htdocs
+icons
+include
+logs
+modules
