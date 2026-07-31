@@ -52,3 +52,21 @@ icons
 include
 logs
 modules
+
+docker ps
+CONTAINER ID   IMAGE          COMMAND              CREATED          STATUS          PORTS                                     NAMES
+eac9a5c04100   httpd:latest   "httpd-foreground"   12 minutes ago   Up 12 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   apache-server
+docker stop apache-server
+apache-server
+docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+docker ps -a
+CONTAINER ID   IMAGE          COMMAND              CREATED          STATUS                      PORTS     NAMES
+eac9a5c04100   httpd:latest   "httpd-foreground"   13 minutes ago   Exited (0) 25 seconds ago             apache-server
+
+docker restart apache-server
+apache-server
+
+docker ps
+CONTAINER ID   IMAGE          COMMAND              CREATED          STATUS          PORTS                                     NAMES
+eac9a5c04100   httpd:latest   "httpd-foreground"   14 minutes ago   Up 16 seconds   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   apache-serve
