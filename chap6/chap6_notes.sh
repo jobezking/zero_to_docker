@@ -9,3 +9,8 @@ docker pull redis
 fully qualified image name: registry/namespace/image:tag i.e. docker.io/nigelpoulton/ddd-book:ch8.1d
 docker pull <repository>:<tag> # pulls an image from official repository
 docker pull ghcr.io/regclient/regsync:latest #pull image from different registry; requires DNS name before repository name
+
+docker pull node:latest
+docker inspect node:latest # shows metadata about the image
+docker images --digests node # shows the digest of the image
+docker buildx imagetools inspect nginx:latest # 

@@ -13,3 +13,83 @@ Digest: sha256:c88d347edef6249a6d2293f926f1eeb48bd40c57cbcd02c07f52e7f1fd2cb46b
 Status: Downloaded newer image for redis:latest
 docker.io/library/redis:latest
 
+$ docker pull node:latest
+latest: Pulling from library/node
+4c15dfa0bd61: Pull complete 
+bcdc095dc583: Pull complete 
+65956eab0c1c: Pull complete 
+10519bdd719f: Pull complete 
+b890c9407285: Pull complete 
+9e002cae30c4: Pull complete 
+b453535073b6: Pull complete 
+694825a89d37: Download complete 
+679fbf8c2a83: Download complete 
+Digest: sha256:a9875b5ccb02aa527cf7f2297b16ae425a0ff3da2f7d87fce3df41f04ffa0524
+Status: Downloaded newer image for node:latest
+docker.io/library/node:latest
+
+$ docker inspect node:latest
+[
+    {
+        "Id": "sha256:a9875b5ccb02aa527cf7f2297b16ae425a0ff3da2f7d87fce3df41f04ffa0524",
+        "RepoTags": [
+            "node:latest"
+        ],
+        "RepoDigests": [
+            "node@sha256:a9875b5ccb02aa527cf7f2297b16ae425a0ff3da2f7d87fce3df41f04ffa0524"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-07-30T19:03:43.315182177Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NODE_VERSION=26.5.1"
+            ],
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "Cmd": [
+                "node"
+            ]
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 442418744,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:102f96b3f4cea4b0d15a4b725e85070f0c28709b420a5e37e3c775bf9859059e",
+                "sha256:f86e5327aae03c1ee89093ec9d5882e72f6f3784356f7d727cde862f829873eb",
+                "sha256:21ac065449b5134b5c1a50ace5e656f0d0d9e0e91653806953a5fb9c49c17b81",
+                "sha256:9ba280139d95afe041f4a3e2947779a7e902a68d8eec717d92679231864dc7f1",
+                "sha256:c7a49e84774085dacadc25979121d369d0ee891ff5dd9c330f7b14dcf85e9fb3",
+                "sha256:f868c0f41c8afa8738e867c4fb97d413610d24c606050ea6e90182d28dfca0af",
+                "sha256:3cba1f67840340c9df98f8033a89e2c13d56f9b262079c3848a2b8be37d7e977"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-07-31T04:44:41.458279637Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:a9875b5ccb02aa527cf7f2297b16ae425a0ff3da2f7d87fce3df41f04ffa0524",
+            "size": 5121
+        },
+        "Identity": {
+            "Pull": [
+                {
+                    "Repository": "docker.io/library/node"
+                }
+            ]
+        }
+    }
+]
+
+docker images --digests node
+REPOSITORY   TAG       DIGEST                                                                    IMAGE ID       CREATED        SIZE
+node         latest    sha256:a9875b5ccb02aa527cf7f2297b16ae425a0ff3da2f7d87fce3df41f04ffa0524   a9875b5ccb02   10 hours ago   1.79GB
+
+docker buildx imagetools inspect nginx:latest
+Name:      docker.io/library/nginx:latest
+MediaType: application/vnd.oci.image.index.v1+json
+Digest:    sha256:5a88c9c45479443d7be2eadc894b4ed0a9801bae03d97a5760ae13b5c2005942
