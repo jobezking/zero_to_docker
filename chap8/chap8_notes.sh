@@ -12,3 +12,9 @@ cd ddd-book/node-app
 docker init  # creates Dockerfile
 cd chap8/node-app
 docker build -t ddd-book:ch8.node .
+docker inspect ddd-book:ch8.node
+
+Push image to registry (optional)
+docker login # credentials are stored in '/home/user/.docker/config.json'
+docker tag ddd-book:ch8.node <username>/ddd-book:ch8.node
+docker push <username>/ddd-book:ch8.node
