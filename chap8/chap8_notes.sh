@@ -10,3 +10,5 @@ can also use docker init [platform] i.e. docker init python
 git clone https://github.com/nigelpoulton/ddd-book.git
 cd ddd-book/node-app
 docker init  # creates Dockerfile
+cd chap8/node-app
+docker build -t ddd-book:ch8.node .

@@ -40,3 +40,43 @@ drwxrwxr-x   2 crdp crdp 4.0K Jul 31 11:44 views
 -rw-rw-r--   1 crdp crdp 1.2K Jul 31 11:46 Dockerfile
 -rw-rw-r--   1 crdp crdp 1.7K Jul 31 11:46 compose.yaml
 -rw-rw-r--   1 crdp crdp  827 Jul 31 11:46 README.Docker.md
+
+node-app$ docker build -t ddd-book:ch8.node .
+[+] Building 5.5s (11/11) FINISHED                                                                                                                                                         docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                                                 0.0s
+ => => transferring dockerfile: 1.21kB                                                                                                                                                               0.0s
+ => resolve image config for docker-image://docker.io/docker/dockerfile:1                                                                                                                            0.5s
+ => docker-image://docker.io/docker/dockerfile:1@sha256:87999aa3d42bdc6bea60565083ee17e86d1f3339802f543c0d03998580f9cb89                                                                             0.4s
+ => => resolve docker.io/docker/dockerfile:1@sha256:87999aa3d42bdc6bea60565083ee17e86d1f3339802f543c0d03998580f9cb89                                                                                 0.0s
+ => => sha256:50ba52cd6a2c01eaf1a9efbedc7c75b5da5e3965c1586001c722980487a73fd7 14.36MB / 14.36MB                                                                                                     0.3s
+ => => extracting sha256:50ba52cd6a2c01eaf1a9efbedc7c75b5da5e3965c1586001c722980487a73fd7                                                                                                            0.1s
+ => [internal] load metadata for docker.io/library/node:23.3.0-alpine                                                                                                                                0.5s
+ => [internal] load .dockerignore                                                                                                                                                                    0.0s
+ => => transferring context: 2B                                                                                                                                                                      0.0s
+ => [stage-0 1/4] FROM docker.io/library/node:23.3.0-alpine@sha256:3e58d4a77778684d17ab30ba8192515bd8078083df29a2d90fe7481f78f30093                                                                  1.7s
+ => => resolve docker.io/library/node:23.3.0-alpine@sha256:3e58d4a77778684d17ab30ba8192515bd8078083df29a2d90fe7481f78f30093                                                                          0.0s
+ => => sha256:ff72017254ae05db222f4e8ad96fe63a3ec44bd4263c9eca7b6a2e2aaafc0726 446B / 446B                                                                                                           0.0s
+ => => sha256:22316c0cd03d2cd927d17a05095be07a8bc80557f94109809b668868579e3e31 1.26MB / 1.26MB                                                                                                       0.1s
+ => => sha256:de8081fb22d02a911be5a3cde1880210a125a2906cf9ade0c43b49e6b2d2bcda 51.16MB / 51.16MB                                                                                                     0.9s
+ => => sha256:38a8310d387e375e0ec6fabe047a9149e8eb214073db9f461fee6251fd936a75 3.64MB / 3.64MB                                                                                                       0.2s
+ => => extracting sha256:38a8310d387e375e0ec6fabe047a9149e8eb214073db9f461fee6251fd936a75                                                                                                            0.1s
+ => => extracting sha256:de8081fb22d02a911be5a3cde1880210a125a2906cf9ade0c43b49e6b2d2bcda                                                                                                            0.7s
+ => => extracting sha256:22316c0cd03d2cd927d17a05095be07a8bc80557f94109809b668868579e3e31                                                                                                            0.0s
+ => => extracting sha256:ff72017254ae05db222f4e8ad96fe63a3ec44bd4263c9eca7b6a2e2aaafc0726                                                                                                            0.0s
+ => [internal] load build context                                                                                                                                                                    0.1s
+ => => transferring context: 8.95MB                                                                                                                                                                  0.1s
+ => [stage-0 2/4] WORKDIR /usr/src/app                                                                                                                                                               0.1s
+ => [stage-0 3/4] RUN --mount=type=bind,source=package.json,target=package.json     --mount=type=bind,source=package-lock.json,target=package-lock.json     --mount=type=cache,target=/root/.npm     1.2s
+ => [stage-0 4/4] COPY . .                                                                                                                                                                           0.1s
+ => exporting to image                                                                                                                                                                               0.7s 
+ => => exporting layers                                                                                                                                                                              0.4s 
+ => => exporting manifest sha256:dfc0ffb2e756af3cb42aa78d2835544c459bdc3e689f65edb9d7a290bffd9903                                                                                                    0.0s 
+ => => exporting config sha256:0385c969e531f7feb44c1217728771c7ecb636d4312a67b86ef3a20990073c7a                                                                                                      0.0s 
+ => => exporting attestation manifest sha256:2547c4b844890a85ea2b7b401e384d7cb7a3a3602ca13cbfefd2c6382753f212                                                                                        0.0s
+ => => exporting manifest list sha256:6bc1b93fe7bbe4293919b91be8bc299bb7546f717b0bfcc723de7ddb09387d18                                                                                               0.0s
+ => => naming to docker.io/library/ddd-book:ch8.node                                                                                                                                                 0.0s
+ => => unpacking to docker.io/library/ddd-book:ch8.node                                                                                                                                              0.2s
+
+ 2 warnings found (use docker --debug to expand):
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 14)
+ - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 38)
