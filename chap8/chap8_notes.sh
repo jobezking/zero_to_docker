@@ -21,4 +21,10 @@ docker push <username>/ddd-book:ch8.node
 docker run -d --name c1 -p 5005:8080 <username>/ddd-book:ch8.node
 docker ps
 cd ../multi-stage
- docker build -t multi:full .
+docker build -t multi:full .
+
+docker build -t multi:client --target prod-client -f Dockerfile-final .
+docker build -t multi:server --target prod-server -f Dockerfile-final .
+docker images
+cd ../node-app
+docker build -t ddd-book:ch8.npm  -f Dockerfile-npm .
