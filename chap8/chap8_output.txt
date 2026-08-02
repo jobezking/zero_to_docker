@@ -95,3 +95,6 @@ fbcf685a620c: Pushed
 e0069f94c247: Pushed 
 fa2880ae6514: Pushed 
 ch8.node: digest: sha256:6bc1b93fe7bbe4293919b91be8bc299bb7546f717b0bfcc723de7ddb09387d18 size: 856
+
+docker run -d --name c1 -p 5005:8080 <username>/ddd-book:ch8.node
+651520fade40158add9fffc9c61172a63213f1607f2b2a824b0a28f0f94ec92
