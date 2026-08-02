@@ -20,3 +20,5 @@ docker tag ddd-book:ch8.node <username>/ddd-book:ch8.node
 docker push <username>/ddd-book:ch8.node
 docker run -d --name c1 -p 5005:8080 <username>/ddd-book:ch8.node
 docker ps
+cd ../multi-stage
+ docker build -t multi:full .
