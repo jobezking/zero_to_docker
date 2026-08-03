@@ -1,0 +1,125 @@
+docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+a6ec6feabba6   bridge    bridge    local
+564d0ca239f0   host      host      local
+f62b91eb7295   none      null      local
+
+docker network inspect bridge
+[
+    {
+        "Name": "bridge",
+        "Id": "a6ec6feabba63f75c777cea579dfdf179775bc670adedf005ef048d05d457eda",
+        "Created": "2026-08-01T10:29:16.67980448-04:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.17.0.0/16",
+                    "Gateway": "172.17.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.bridge.default_bridge": "true",
+            "com.docker.network.bridge.enable_icc": "true",
+            "com.docker.network.bridge.enable_ip_masquerade": "true",
+            "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+            "com.docker.network.bridge.name": "docker0",
+            "com.docker.network.driver.mtu": "1500"
+        },
+        "Labels": {},
+        "Containers": {
+            "651520fade40158add9fffc9c61172a63213f1607f2b2a824b0a28f0f94ec925": {
+                "Name": "c1",
+                "EndpointID": "929b98214cbee63eb4d57812374586067ef1b2682fdc80478164604eb471155f",
+                "MacAddress": "a6:66:9a:71:65:01",
+                "IPv4Address": "172.17.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.17.0.0/16": {
+                        "IPsInUse": 4,
+                        "DynamicIPsAvailable": 65532
+                    }
+                }
+            }
+        }
+    }
+]
+
+docker network inspect host
+[
+    {
+        "Name": "host",
+        "Id": "564d0ca239f09ce883807354a273b1865e33af1e0831d58b6f1c5418249b600b",
+        "Created": "2026-06-15T19:33:51.257547832-04:00",
+        "Scope": "local",
+        "Driver": "host",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": null
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+            "IPAM": {}
+        }
+    }
+]
+
+docker network inspect none
+[
+    {
+        "Name": "none",
+        "Id": "f62b91eb7295b49a728457b09a1b5a1eaba189319b8de28eaf3f5e407b98c094",
+        "Created": "2026-06-15T19:33:51.254201434-04:00",
+        "Scope": "local",
+        "Driver": "null",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": null
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+            "IPAM": {}
+        }
+    }
+]
