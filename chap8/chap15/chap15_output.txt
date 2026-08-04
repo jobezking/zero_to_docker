@@ -1,2 +1,25 @@
 docker volume create myvol
 myvol
+docker volume ls
+DRIVER    VOLUME NAME
+local     myvol
+sudo ls -l /var/lib/docker/volumes
+brw------- 1 root root 259, 2 Aug  3 18:56 backingFsBlockDev
+-rw------- 1 root root  32768 Aug  3 18:56 metadata.db
+drwx-----x 3 root root   4096 Aug  3 01:34 myvol
+sudo ls -l /var/lib/docker/volumes/myvol
+total 4
+drwxr-xr-x 2 root root 4096 Aug  3 01:34 _data
+sudo ls -l /var/lib/docker/volumes/myvol/_data
+docker volume inspect myvol
+[
+    {
+        "CreatedAt": "2026-08-03T01:34:03-04:00",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/myvol/_data",
+        "Name": "myvol",
+        "Options": null,
+        "Scope": "local"
+    }
+]
