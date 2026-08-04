@@ -23,3 +23,25 @@ docker volume inspect myvol
         "Scope": "local"
     }
 ]
+
+docker run -it --name voltainer --mount source=bizvol,target=/vol alpine
+/ #
+#exit with CTRL+P+Q
+
+docker exec -it voltainer sh
+/ # echo "I promise to write a book review on Amazon" > /vol/file1
+/ # 
+# cat /vol/file1
+I promise to write a book review on Amazon
+exit
+
+docker rm voltainer -f
+voltainer
+docker ps -a
+CONTAINER ID   IMAGE                         COMMAND                  CREATED        STATUS                     PORTS     NAMES
+651520fade40   jobezking/ddd-book:ch8.node   "docker-entrypoint.s…"   47 hours ago   Exited (137) 9 hours ago             c1
+eac9a5c04100   httpd:latest                  "httpd-foreground"       3 days ago     Exited (0) 3 days ago                apache-server
+docker volume ls
+DRIVER    VOLUME NAME
+local     bizvol
+local     myvol
