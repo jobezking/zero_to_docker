@@ -16,3 +16,12 @@ exit
 docker rm voltainer -f
 docker ps -a
 docker volume ls
+
+#SAMBA/CIFS
+
+docker volume create \
+  --driver local \
+  --opt type=cifs \
+  --opt device=//192.168.1.50/my-share \
+  --opt o=username=myuser,password=mypassword,file_mode=0777,dir_mode=0777 \
+  my_samba_volume
