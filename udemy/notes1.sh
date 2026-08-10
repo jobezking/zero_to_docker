@@ -19,3 +19,6 @@ docker exec -it container_id bash  # open an interactive bash shell inside the r
 # Needs to be in directory with valid Dockerfile
 docker build .    # note "Successfully built <image_id>" at the end of the output
 docker run -d <image_id>  # run the newly built image in detached mode
+
+docker build . -t app1
+docer run -d app1  # run the newly built image in detached mode
