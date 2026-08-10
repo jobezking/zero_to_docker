@@ -12,5 +12,6 @@ docker kill container_id  # forcefully stop a running container using its ID or 
 ## Example
 docker run -d redis  # run the redis image in detached mode (in the background)
 docker ps  # get container ID of the running redis container
+docker run -it --name my-redis redis sh # run the redis image in interactive mode with a custom name
 docker exec -it container_id redis-cli  # open an interactive redis-cli shell inside the running container
 docker exec -it container_id bash  # open an interactive bash shell inside the running container
