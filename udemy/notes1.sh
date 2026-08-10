@@ -8,3 +8,9 @@ docker system prune  # remove all stopped containers, unused networks, dangling 
 docker logs container_id  # view the logs of a running or stopped container
 docker stop container_id  # stop a running container using its ID or name
 docker kill container_id  # forcefully stop a running container using its ID or name
+
+## Example
+docker run -d redis  # run the redis image in detached mode (in the background)
+docker ps  # get container ID of the running redis container
+docker exec -it container_id redis-cli  # open an interactive redis-cli shell inside the running container
+docker exec -it container_id bash  # open an interactive bash shell inside the running container
