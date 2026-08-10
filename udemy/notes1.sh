@@ -5,3 +5,6 @@ docker run = docker create + docker start  # run is a combination of create and 
 docker create imagename  # create a new container from the specified image, but do not start it
 docker start container_id  # start a stopped container using its ID or name
 docker system prune  # remove all stopped containers, unused networks, dangling images, and build cache
+docker logs container_id  # view the logs of a running or stopped container
+docker stop container_id  # stop a running container using its ID or name
+docker kill container_id  # forcefully stop a running container using its ID or name
