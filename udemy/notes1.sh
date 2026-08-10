@@ -15,3 +15,7 @@ docker ps  # get container ID of the running redis container
 docker run -it --name my-redis redis sh # run the redis image in interactive mode with a custom name
 docker exec -it container_id redis-cli  # open an interactive redis-cli shell inside the running container
 docker exec -it container_id bash  # open an interactive bash shell inside the running container
+
+# Needs to be in directory with valid Dockerfile
+docker build .    # note "Successfully built <image_id>" at the end of the output
+docker run -d <image_id>  # run the newly built image in detached mode
