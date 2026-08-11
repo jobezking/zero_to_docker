@@ -22,3 +22,5 @@ docker run -d <image_id>  # run the newly built image in detached mode
 
 docker build . -t app1
 docer run -d app1  # run the newly built image in detached mode
+
+docker build -f Dockerfile.dev . -t app1  # build an image using a specific Dockerfile (Dockerfile.dev) and tag it as app1
