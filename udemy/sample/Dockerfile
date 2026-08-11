@@ -15,3 +15,6 @@ EXPOSE 80
 COPY index.html /var/www/html/index.html
 
 CMD ["nginx", "-g", "daemon off;"]
+
+#docker build -t my-nginx-ubuntu .
+#docker run -d -p 8080:80 --name my-nginx-container my-nginx-ubuntu
